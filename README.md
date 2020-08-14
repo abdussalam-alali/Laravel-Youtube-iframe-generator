@@ -16,7 +16,7 @@ public function index()
             ->height(400,'px')
             ->noFullScreen()
             ->get('https://www.youtube.com/watch?v=35JzR2ymxJE');
-    return $iframe
+    return $iframe;
 }
 ```
 ### Result:
@@ -24,7 +24,7 @@ public function index()
 ## In view 
 ```php html
 <div class="video_container">
-{{!! \App\Samo\YoutubeIframe\Iframe::css('border-radius:50px;')
+{!! \App\Samo\YoutubeIframe\Iframe::css('border-radius:50px;')
             ->width(100,'%')
             ->height(400,'px')
             ->noFullScreen()
