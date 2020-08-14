@@ -33,61 +33,66 @@ class Iframe{
 
     */
     static $css;
-    static $width = 500;
-    static $height = 300;
     static $id;
     static $fscreen = 'allowfullscreen';
     static $attributes = '';
 
+    // add new css property / properities
     public static function css($css = "")
     {
         self::$css .= $css;
         return new Iframe();
     }
+    // add new HTML attribute / Attributes
     public static function addAttribute($att)
     {
         self::$attributes.=$att;
         return new Iframe();
     }
+    // disable full screen feature of youtube player
     public static function noFullScreen()
     {
         self::$fscreen ='';
         return new Iframe();
     }
+    // set width
     public static function width($width=500,$unit="px")
     {
-        self::$width = $width;
         self::$css .= "width:".$width.$unit.';';
         return new Iframe();
     }
-
+    // set player height
     public static function height($height = 300,$unit = "px")
     {
-        self::$height = $height;
         self::$css .= "height:".$height.$unit.';';
         return new Iframe();
     }
+
+    // generate the markup
     public static function get($url)
     {
         $id = self::getID($url);
         $str = '<iframe src="https://www.youtube.com/embed/'.$id.'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" '.self::$fscreen.' '.self::$attributes.'  style=" '.Iframe::$css.'"></iframe>';
         return $str;
     }
-
+    // extract the id
     private static function getID($url)
     {
-        $res = strpos($url,'watch?v=');
+        // first case : youtube.com/watch?v=xxxxx or youtube.com/?v=xxxxx
+        $res = strpos($url,'?v=');
         if($res !== false)
         {
             $t = explode("?v=",$url);
             return $t[count($t)-1];
         }
+        // second case : youtu.be.com/xxxx
         $res = strpos($url,'youtu.be');
         if($res !== false)
         {
             $t = explode($url,'/');
             return $t[count($t)-1];
         }
+        //otherwise assume that the user passed the ID
         return $url;
     }
 
