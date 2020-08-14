@@ -1,0 +1,23 @@
+{
+    "name": "samo/youtubeiframe",
+    "description": "get an youtube video embedded iframe easly from url or video id",
+    "authors": [
+        {
+            "name": "Abdussalam Al-Ali",
+            "email": "abdussalam.alali95@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Samo\\YoutubeIframe\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Samo\\YoutubeIframe\\YoutubeIframeProvider"
+            ]
+        }
+    }
+}
