@@ -20,7 +20,7 @@ public function index()
 }
 ```
 ### Result:
- ![image of mr bing] (https://i.ibb.co/vVkNjJh/1.jpg)
+ ![image of mr bing](https://i.ibb.co/vVkNjJh/1.jpg)
 ## in view 
 ```php html
 <div class="video_container">
