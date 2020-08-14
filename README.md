@@ -24,7 +24,7 @@ public function index()
 ## In view 
 ```php html
 <div class="video_container">
-{!! \App\Samo\YoutubeIframe\Iframe::css('border-radius:50px;')
+{!! Samo\YoutubeIframe\Iframe::css('border-radius:50px;')
             ->width(100,'%')
             ->height(400,'px')
             ->noFullScreen()
