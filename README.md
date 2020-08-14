@@ -6,7 +6,7 @@
 
 # Usage 
 
-## in controller 
+## In controller 
 ```php
 use Samo\YoutubeIframe\Iframe;
 public function index() 
@@ -21,7 +21,7 @@ public function index()
 ```
 ### Result:
  ![image of mr bing](https://i.ibb.co/vVkNjJh/1.jpg)
-## in view 
+## In view 
 ```php html
 <div class="video_container">
 {{!! \App\Samo\YoutubeIframe\Iframe::css('border-radius:50px;')
@@ -32,36 +32,36 @@ public function index()
 </div>
 
 ```
-# available methods:
+# Available methods:
 
 ## css($str)
-defines additional CSS properities sperated by ';'
-Example : 
+Defines additional CSS properities sperated by ';'<br/>
+Example : <br/>
 `Iframe::css('border:1px solid #000;opacity:0.7')->get('35JzR2ymxJE');`
 
 ## height($val=300,$unit='px')
-sets the player height (Default is 300px)
-Example : 
+Sets the player height (Default is 300px) <br/>
+Example : <br/>
 `Iframe::height(500,'px')->get('35JzR2ymxJE');`
 ## width($val=500,$unit='px')
-sets the player width (default is 500px)
-Example : 
+Sets the player width (default is 500px) <br/>
+Example : <br/>
 `Iframe::width(500,'px')->get('35JzR2ymxJE');`
 
 ## get($urlOrID)
-returns the Iframe markup you can pass URL or Video ID
-Accepted url format :
-youtube.com/watch?v=xxxxxx
-youtu.be.com/xxxxxxx
-youtube.com/?v=xxxxxx
+Returns the Iframe markup you can pass URL or Video ID<br>
+Accepted url format :<br/>
+youtube.com/watch?v=xxxxxx<br/>
+youtu.be.com/xxxxxxx<br/>
+youtube.com/?v=xxxxxx<br/>
 
 ## noFullScreen()
 disable full screen feature
 
 ## addAttribute($att)
-adding HTML attributes 
-Example : 
-`Iframe::attribute('class="pt-5"')->get('35JzR2ymxJE');`
+adds a HTML attributes <br/>
+Example : <br/>
+`Iframe::addAttribute('class="pt-5"')->addAttribute('id="pl1")->get('35JzR2ymxJE');`
 
 
 
